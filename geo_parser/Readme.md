@@ -27,9 +27,7 @@ crispr screen data parser from GEO
 | -kl   | Required. Logic between columns of keywords. For example: if the keyword file consists of three columns: "crispr", "cancer", and "immune", the first keyword column should be referred to as "match_res0", and so on. Then this parameter could be written as "(key_match_dict['match_res0']) and (key_match_dict['match_res1'] or key_match_dict['match_res2'])".|
 
 ## Usage
-    ```shell
-    python geo_parser/scrna_parser_runner.py parser -d 2022/12/01-2023/01/01 -el geo_parser/sample/problem_GSE.txt -o ~/sample_collection.csv -p ~/geo_xml -ki '~/sample_key_words.txt' -kl "(key_match_dict['match_res0']) and (key_match_dict['match_res1'] or key_match_dict['match_res2'])"
-    ```
+`python geo_parser/scrna_parser_runner.py parser -d 2022/12/01-2023/01/01 -el geo_parser/sample/problem_GSE.txt -o ~/sample_collection.csv -p ~/geo_xml -ki '~/sample_key_words.txt' -kl "(key_match_dict['match_res0']) and (key_match_dict['match_res1'] or key_match_dict['match_res2'])"`
     
 examples can be found in geo_parser/sample directory, particularly in the sample_crawler.sh file.
 
