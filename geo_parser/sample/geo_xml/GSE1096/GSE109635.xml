@@ -1,0 +1,2397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<MINiML
+   xmlns="http://www.ncbi.nlm.nih.gov/geo/info/MINiML"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.ncbi.nlm.nih.gov/geo/info/MINiML http://www.ncbi.nlm.nih.gov/geo/info/MINiML.xsd"
+   version="0.5.0" >
+
+  <Contributor iid="contrib1">
+    <Person><First>Steven</First><Middle>D</Middle><Last>Douglas</Last></Person>
+    <Email>DOUGLAS@EMAIL.CHOP.EDU</Email>
+    <Phone>267-426-9570</Phone>
+    <Laboratory>Abramson Research Building 1204</Laboratory>
+    <Department>Pediatrics</Department>
+    <Organization>The Children's Hospital of Philadelphia</Organization>
+    <Address>
+      <Line>3615 Civic Center Blvd</Line>
+      <City>Philadelphia</City>
+      <State>PA</State>
+      <Zip-Code>19104</Zip-Code>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib2">
+    <Organization>GEO</Organization>
+    <Address>
+      <City></City>
+      <Country>USA</Country>
+    </Address>
+  </Contributor>
+
+  <Contributor iid="contrib3">
+    <Person><First>Vasiliki</First><Last>Pappa</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib4">
+    <Person><First>Sergei</First><Last>Spitsin</Last></Person>
+  </Contributor>
+
+  <Contributor iid="contrib5">
+    <Person><First>Peter</First><Middle>J</Middle><Last>Gaskill</Last></Person>
+  </Contributor>
+
+  <Database iid="GEO">
+    <Name>Gene Expression Omnibus (GEO)</Name>
+    <Public-ID>GEO</Public-ID>
+    <Organization>NCBI NLM NIH</Organization>
+    <Web-Link>http://www.ncbi.nlm.nih.gov/geo</Web-Link>
+    <Email>geo@ncbi.nlm.nih.gov</Email>
+  </Database>
+
+  <Platform iid="GPL20301">
+    <Status database="GEO">
+      <Submission-Date>2015-06-09</Submission-Date>
+      <Release-Date>2015-06-09</Release-Date>
+      <Last-Update-Date>2019-03-21</Last-Update-Date>
+    </Status>
+    <Title>Illumina HiSeq 4000 (Homo sapiens)</Title>
+    <Accession database="GEO">GPL20301</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="9606">Homo sapiens</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Platform iid="GPL24676">
+    <Status database="GEO">
+      <Submission-Date>2018-03-02</Submission-Date>
+      <Release-Date>2018-03-02</Release-Date>
+      <Last-Update-Date>2018-11-05</Last-Update-Date>
+    </Status>
+    <Title>Illumina NovaSeq 6000 (Homo sapiens)</Title>
+    <Accession database="GEO">GPL24676</Accession>
+    <Technology>high-throughput sequencing</Technology>
+    <Distribution>virtual</Distribution>
+    <Organism taxid="9606">Homo sapiens</Organism>
+    <Manufacturer></Manufacturer>
+    <Manufacture-Protocol>
+    </Manufacture-Protocol>
+    <Contact-Ref ref="contrib2" />
+  </Platform>
+
+  <Sample iid="GSM2947722">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16- monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947722</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Male
+      </Characteristics>
+      <Characteristics tag="donor age">
+27
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947722/suppl/GSM2947722_ND444_4C_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395306" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599522" />
+  </Sample>
+
+  <Sample iid="GSM2947723">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16+ monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947723</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Male
+      </Characteristics>
+      <Characteristics tag="donor age">
+27
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947723/suppl/GSM2947723_ND444_4C_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395305" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599523" />
+  </Sample>
+
+  <Sample iid="GSM2947724">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16- monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947724</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947724/suppl/GSM2947724_ND410_4C_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395310" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599524" />
+  </Sample>
+
+  <Sample iid="GSM2947725">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16+ monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947725</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947725/suppl/GSM2947725_ND410_4C_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395312" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599525" />
+  </Sample>
+
+  <Sample iid="GSM2947726">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16- monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM2947726</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+27
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947726/suppl/GSM2947726_ND486_4C_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395314" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599526" />
+  </Sample>
+
+  <Sample iid="GSM2947727">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>untreated CD16+ monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM2947727</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+27
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+no treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947727/suppl/GSM2947727_ND486_4C_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395313" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599527" />
+  </Sample>
+
+  <Sample iid="GSM2947728">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>SP treated CD16- monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947728</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+SP treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947728/suppl/GSM2947728_ND451_SP_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395317" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599528" />
+  </Sample>
+
+  <Sample iid="GSM2947729">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>SP treated CD16+ monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947729</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+SP treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947729/suppl/GSM2947729_ND451_SP_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395316" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599529" />
+  </Sample>
+
+  <Sample iid="GSM2947730">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>SP treated CD16- monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947730</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+SP treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947730/suppl/GSM2947730_ND410_SP_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395315" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599530" />
+  </Sample>
+
+  <Sample iid="GSM2947731">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>SP treated CD16+ monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947731</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+SP treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947731/suppl/GSM2947731_ND410_SP_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395303" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599531" />
+  </Sample>
+
+  <Sample iid="GSM2947732">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947732</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947732/suppl/GSM2947732_ND451_Ctrl_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395304" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599532" />
+  </Sample>
+
+  <Sample iid="GSM2947733">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM2947733</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947733/suppl/GSM2947733_ND451_Ctrl_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395302" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599533" />
+  </Sample>
+
+  <Sample iid="GSM2947734">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947734</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947734/suppl/GSM2947734_ND410_Ctrl_Cmo.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395300" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599534" />
+  </Sample>
+
+  <Sample iid="GSM2947735">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-31</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM2947735</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+Female
+      </Characteristics>
+      <Characteristics tag="donor age">
+52
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina HiSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out.txt count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL20301" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina HiSeq 4000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM2947nnn/GSM2947735/suppl/GSM2947735_ND410_Ctrl_NC.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN08395301" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX3599535" />
+  </Sample>
+
+  <Sample iid="GSM4560995">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 1 [ND429]</Title>
+    <Accession database="GEO">GSM4560995</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+31
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4560nnn/GSM4560995/suppl/GSM4560995_ND429_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981388" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368825" />
+  </Sample>
+
+  <Sample iid="GSM4560996">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 1 [ND429]</Title>
+    <Accession database="GEO">GSM4560996</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+31
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4560nnn/GSM4560996/suppl/GSM4560996_ND429_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981387" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368826" />
+  </Sample>
+
+  <Sample iid="GSM4560997">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM4560997</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+31
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4560nnn/GSM4560997/suppl/GSM4560997_ND429_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981386" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368827" />
+  </Sample>
+
+  <Sample iid="GSM4560998">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 1</Title>
+    <Accession database="GEO">GSM4560998</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+31
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4560nnn/GSM4560998/suppl/GSM4560998_ND429_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981385" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368828" />
+  </Sample>
+
+  <Sample iid="GSM4560999">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 2 [ND517]</Title>
+    <Accession database="GEO">GSM4560999</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4560nnn/GSM4560999/suppl/GSM4560999_ND517_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981384" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368829" />
+  </Sample>
+
+  <Sample iid="GSM4561000">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 2 [ND517]</Title>
+    <Accession database="GEO">GSM4561000</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561000/suppl/GSM4561000_ND517_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981383" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368830" />
+  </Sample>
+
+  <Sample iid="GSM4561001">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM4561001</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561001/suppl/GSM4561001_ND517_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981382" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368831" />
+  </Sample>
+
+  <Sample iid="GSM4561002">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 2</Title>
+    <Accession database="GEO">GSM4561002</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+28
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561002/suppl/GSM4561002_ND517_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981381" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368832" />
+  </Sample>
+
+  <Sample iid="GSM4561003">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM4561003</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+-
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561003/suppl/GSM4561003_ND531_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981380" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368833" />
+  </Sample>
+
+  <Sample iid="GSM4561004">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM4561004</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+-
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561004/suppl/GSM4561004_ND531_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981379" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368834" />
+  </Sample>
+
+  <Sample iid="GSM4561005">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM4561005</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+-
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561005/suppl/GSM4561005_ND531_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981378" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368835" />
+  </Sample>
+
+  <Sample iid="GSM4561006">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 3</Title>
+    <Accession database="GEO">GSM4561006</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+-
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561006/suppl/GSM4561006_ND531_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981377" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368836" />
+  </Sample>
+
+  <Sample iid="GSM4561007">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 4</Title>
+    <Accession database="GEO">GSM4561007</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+33
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561007/suppl/GSM4561007_ND535_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981376" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368837" />
+  </Sample>
+
+  <Sample iid="GSM4561008">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 4</Title>
+    <Accession database="GEO">GSM4561008</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+33
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561008/suppl/GSM4561008_ND535_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981375" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368838" />
+  </Sample>
+
+  <Sample iid="GSM4561009">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 4</Title>
+    <Accession database="GEO">GSM4561009</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+33
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561009/suppl/GSM4561009_ND535_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981412" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368839" />
+  </Sample>
+
+  <Sample iid="GSM4561010">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 4</Title>
+    <Accession database="GEO">GSM4561010</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+33
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561010/suppl/GSM4561010_ND535_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981411" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368840" />
+  </Sample>
+
+  <Sample iid="GSM4561011">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 5</Title>
+    <Accession database="GEO">GSM4561011</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+47
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561011/suppl/GSM4561011_ND538_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981410" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368841" />
+  </Sample>
+
+  <Sample iid="GSM4561012">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 5</Title>
+    <Accession database="GEO">GSM4561012</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+47
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561012/suppl/GSM4561012_ND538_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981409" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368842" />
+  </Sample>
+
+  <Sample iid="GSM4561013">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 5</Title>
+    <Accession database="GEO">GSM4561013</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+47
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561013/suppl/GSM4561013_ND538_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981408" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368843" />
+  </Sample>
+
+  <Sample iid="GSM4561014">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 5</Title>
+    <Accession database="GEO">GSM4561014</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+female
+      </Characteristics>
+      <Characteristics tag="donor age">
+47
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561014/suppl/GSM4561014_ND538_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981407" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368844" />
+  </Sample>
+
+  <Sample iid="GSM4561015">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16- monocytes - replicate 6</Title>
+    <Accession database="GEO">GSM4561015</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+25
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561015/suppl/GSM4561015_ND543_Ctrl_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981406" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368845" />
+  </Sample>
+
+  <Sample iid="GSM4561016">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>vehicle control treated CD16+ monocytes - replicate 6</Title>
+    <Accession database="GEO">GSM4561016</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+25
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+vehicle control treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561016/suppl/GSM4561016_ND543_Ctrl_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981405" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368846" />
+  </Sample>
+
+  <Sample iid="GSM4561017">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16- monocytes - replicate 6</Title>
+    <Accession database="GEO">GSM4561017</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16- monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+25
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561017/suppl/GSM4561017_ND543_SP_Cmo_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981404" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368847" />
+  </Sample>
+
+  <Sample iid="GSM4561018">
+    <Status database="GEO">
+      <Submission-Date>2020-05-20</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-01-30</Last-Update-Date>
+    </Status>
+    <Title>Substance P treated CD16+ monocytes - replicate 6</Title>
+    <Accession database="GEO">GSM4561018</Accession>
+    <Type>SRA</Type>
+    <Channel-Count>1</Channel-Count>
+    <Channel position="1">
+      <Source>primary monocytes</Source>
+      <Organism taxid="9606">Homo sapiens</Organism>
+      <Characteristics tag="tissue">
+blood
+      </Characteristics>
+      <Characteristics tag="cell subset">
+CD16+ monocytes
+      </Characteristics>
+      <Characteristics tag="donor sex">
+male
+      </Characteristics>
+      <Characteristics tag="donor age">
+25
+      </Characteristics>
+      <Characteristics tag="cell treatment">
+Substance P treatment
+      </Characteristics>
+      <Treatment-Protocol>
+For SP treatment, monocytes were incubated for 3 hours at 37°C with 10 µM SP. For vehicle control treatment, monocytes were incubated for 3 hours at 37°C with or 50 µM acetic acid.
+      </Treatment-Protocol>
+      <Molecule>total RNA</Molecule>
+      <Extract-Protocol>
+RNA was purified from sorted monocytes with the Qiagen RNeasy Mini Kit. For each sample 200 ng of RNA was used to construct libraries with he Illumina TruSeq stranded total RNA library Prep kit
+RNA libraries were prepared for sequencing using standard Illumina protocols.
+      </Extract-Protocol>
+    </Channel>
+    <Data-Processing>
+Illumina NovaSeq software was used to create sequencing files
+STAR software was used to align sequencing data to the  Ensembl hg38 genome with parameters  --runMode alignReads --runThreadN 20 --readFilesCommand zcat --twopassMode Basic
+HTSeq was used to count reads with the htseq-count command using the folowing parameters   -f sam -r name -s no -a 10 -i gene_id -m intersection-strict sorted.sam
+Genome_build: hg38
+Supplementary_files_format_and_content: .out count files for each sample
+    </Data-Processing>
+    <Platform-Ref ref="GPL24676" />
+    <Library-Strategy>RNA-Seq</Library-Strategy>
+    <Library-Source>transcriptomic</Library-Source>
+    <Library-Selection>cDNA</Library-Selection>
+    <Instrument-Model>
+      <Predefined>Illumina NovaSeq 6000</Predefined>
+    </Instrument-Model>
+    <Contact-Ref ref="contrib1" />
+    <Supplementary-Data type="TXT">
+ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM4561nnn/GSM4561018/suppl/GSM4561018_ND543_SP_NC_Ovh149.htseq_count.out.txt.gz
+    </Supplementary-Data>
+    <Relation type="BioSample" target="https://www.ncbi.nlm.nih.gov/biosample/SAMN14981403" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRX8368848" />
+  </Sample>
+
+  <Series iid="GSE109635">
+    <Status database="GEO">
+      <Submission-Date>2018-01-25</Submission-Date>
+      <Release-Date>2022-01-30</Release-Date>
+      <Last-Update-Date>2022-02-01</Last-Update-Date>
+    </Status>
+    <Title>In human CD16+ monocytes NK1R signaling upregulates inflammatory pathways and negatively regulates apoptosis</Title>
+    <Accession database="GEO">GSE109635</Accession>
+    <Pubmed-ID>33640716</Pubmed-ID>
+    <Summary>
+The neurokinin-1 receptor (NK1R) pathway has immunomodulatory properties and is implicated in the pathophysiology of neurodegenerative, infectious and inflammatory diseases. Monocytes are important cells in inflammation and they consist of subsets with distinct phenotypes and biological functions. NK1R signaling is elevated in conditions that alter the balance of monocyte subsets, such as in HIV infection. In order to understand the pro-inflammatory mechanism of NK1R signaling in monocyte subsets, a transcriptome study was performed using RNA sequencing. Human primary peripheral monocytes were treated with the NK1R cognate ligand, substance P (SP), prior to being sorted into CD16- and CD16+ subsets. SP treatment led to the differential expression of 38 genes in CD16- monocytes and 12 genes in CD16+ monocytes. The canonical NF-κB pathway was activated in both subsets, as indicated by the upregulation of transcripts including IL1α, IL1β, IL6, CCL3 and CCL4. In the CD16+ monocytes, NK1R signaling led to priming of the NLRP3 inflammasome and upregulated transcripts including NLRP3 and CARD16. Alternative splicing analysis showed that NK1R signaling resulted in differential exon usage of CASP1 and CARD16 in CD16+ monocytes. SP treatment altered the properties of both CD16- and CD16+ monocytes, leading to an inflammatory response with activation of the canonical NF-κB pathway in both monocyte subsets, and priming of the NLRP3 inflammasome in the CD16+ subset.
+    </Summary>
+    <Overall-Design>
+mRNA transcript analysis of primary human CD16- and CD16+ monocyte subsets under no treatment conditions (3 replicates), SP treatment  (2 replicates) or treatment with vehicle control (2 replicates) using the Illumina HiSeq 4000 Sequencing System
+
+mRNA transcript analysis of primary human CD16- and CD16+ monocyte subsets under SP treatment  (6 replicates) or treatment with vehicle control (6 replicates) using the Illumina NovaSeq 6000 Sequencing System
+    </Overall-Design>
+    <Type>Expression profiling by high throughput sequencing</Type>
+    <Contributor-Ref ref="contrib3" position="1" />
+    <Contributor-Ref ref="contrib4" position="2" />
+    <Contributor-Ref ref="contrib1" position="3" />
+    <Contributor-Ref ref="contrib5" position="4" />
+    <Contact-Ref ref="contrib1" />
+    <Sample-Ref ref="GSM2947722" />
+    <Sample-Ref ref="GSM2947723" />
+    <Sample-Ref ref="GSM2947724" />
+    <Sample-Ref ref="GSM2947725" />
+    <Sample-Ref ref="GSM2947726" />
+    <Sample-Ref ref="GSM2947727" />
+    <Sample-Ref ref="GSM2947728" />
+    <Sample-Ref ref="GSM2947729" />
+    <Sample-Ref ref="GSM2947730" />
+    <Sample-Ref ref="GSM2947731" />
+    <Sample-Ref ref="GSM2947732" />
+    <Sample-Ref ref="GSM2947733" />
+    <Sample-Ref ref="GSM2947734" />
+    <Sample-Ref ref="GSM2947735" />
+    <Sample-Ref ref="GSM4560995" />
+    <Sample-Ref ref="GSM4560996" />
+    <Sample-Ref ref="GSM4560997" />
+    <Sample-Ref ref="GSM4560998" />
+    <Sample-Ref ref="GSM4560999" />
+    <Sample-Ref ref="GSM4561000" />
+    <Sample-Ref ref="GSM4561001" />
+    <Sample-Ref ref="GSM4561002" />
+    <Sample-Ref ref="GSM4561003" />
+    <Sample-Ref ref="GSM4561004" />
+    <Sample-Ref ref="GSM4561005" />
+    <Sample-Ref ref="GSM4561006" />
+    <Sample-Ref ref="GSM4561007" />
+    <Sample-Ref ref="GSM4561008" />
+    <Sample-Ref ref="GSM4561009" />
+    <Sample-Ref ref="GSM4561010" />
+    <Sample-Ref ref="GSM4561011" />
+    <Sample-Ref ref="GSM4561012" />
+    <Sample-Ref ref="GSM4561013" />
+    <Sample-Ref ref="GSM4561014" />
+    <Sample-Ref ref="GSM4561015" />
+    <Sample-Ref ref="GSM4561016" />
+    <Sample-Ref ref="GSM4561017" />
+    <Sample-Ref ref="GSM4561018" />
+    <Supplementary-Data type="TAR">
+ftp://ftp.ncbi.nlm.nih.gov/geo/series/GSE109nnn/GSE109635/suppl/GSE109635_RAW.tar
+    </Supplementary-Data>
+    <Relation type="BioProject" target="https://www.ncbi.nlm.nih.gov/bioproject/PRJNA431570" />
+    <Relation type="SRA" target="https://www.ncbi.nlm.nih.gov/sra?term=SRP131231" />
+  </Series>
+
+</MINiML>
